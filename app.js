@@ -3,12 +3,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+require('dotenv').config(); 
+//  const url=process.env.url
+
 
 // Connect to MongoDB
-const url = 'mongodb+srv://GK:gopikrishna123@cluster0.xwia3ec.mongodb.net/CaseStudyNew?retryWrites=true&w=majority';
 
+const URL=process.env.URL;
 
-mongoose.connect(url, {
+mongoose.connect(URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
